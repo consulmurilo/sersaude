@@ -1,0 +1,277 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: "Glacial";
+    src: 
+        local("Glacial"),
+        url(../fonts/glacial-indifference/GlacialIndifference-Regular.otf);
+        font-weight: normal;
+    }
+
+@font-face {
+    font-family: "Glacial";
+    src: 
+        local("Glacial"),
+        url(../fonts/glacial-indifference/GlacialIndifference-Bold.otf);
+        font-weight: bold;
+        }
+
+:root {
+    /* light */
+    --azulescuro: #0F2544;
+    --azulpiscina: #0097B2;
+    --azul: #004AAD;
+
+    /* dark */
+    --azulalt: #007EAD;
+
+    /* branco e preto */
+    --branco: #FEFFFE;
+    --cinza: #737373;    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Glacial", sans-serif;
+}
+
+header {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.300);
+    background-color: var(--azulescuro);
+}
+
+#header-logo {
+    width: 10%;
+    height: auto;
+    margin-right: 5%;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24;
+
+  color: var(--azulpiscina);
+}
+
+#menu-icon {
+    display: block;
+    margin-left: 5%;
+}
+
+#menu-icon:hover {
+    cursor: pointer;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    padding: 5%;
+    margin-top: 15%;
+    background-color: var(--azulescuro);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.300);
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in;
+}
+
+nav.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 2%;
+}
+
+nav a:hover {
+    color: var(--azulpiscina);
+}
+
+#main-content {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#main-logo {
+    width: 100%;
+}
+
+#articles {
+    min-height: 100vh;
+    padding: 10% 5%;
+}
+
+article {
+    text-align: justify;
+    margin: 20% 0;
+}
+
+article h1 {
+    font-size: 2em;
+    margin: 5% 0;
+}
+
+article p {
+    margin: 2% 0;
+}
+
+.article-image {
+    width: 100%;
+}
+
+.more {
+    text-decoration: none;
+    color: var(--azulpiscina);
+    float: right;
+}
+
+.more:hover {
+    color: var(--azul);
+}
+
+footer {
+    min-height: auto;
+    padding: 5%;
+    background-color: var(--azulescuro);
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.300);
+}
+
+footer h2 {
+    margin: 1% 0;
+}
+
+footer section {
+    margin: 5% 0;
+}
+
+.link-icons {
+    display: flex;
+    align-items: center;
+    margin: 3% 0;
+}
+
+footer a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin-left: 2%;
+}
+
+footer a:hover {
+    color: var(--azulpiscina);
+}
+
+footer address {
+    font-style: normal;
+}
+
+address p {
+    margin-left: 2%;
+}
+
+#rights {
+    font-size: 0.8rem;
+    text-align: center;
+    color: var(--cinza);
+    background-color: var(--azulescuro);
+    padding: 2%;
+}
+
+@media screen and (min-width: 1000px) {
+    #header-logo {
+        width: 3%;
+        height: auto;
+        margin-right: 5%;
+    }
+
+    nav {
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        position: fixed;
+        margin-top: 0%;
+        background-color: var(--azulescuro);
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0.300);
+
+        padding: 0 7.5%;
+        opacity: 100%;
+        visibility: visible;
+        transition: opacity 0.3s ease-in;
+        height: 10vh;
+    }
+
+    .link-icons.nav {
+        width: 100%;
+    }
+
+    #main-content {
+        min-height: 100vh;
+    }
+    
+    #main-logo {
+        width: 50%;
+    }
+
+    #articles {
+        min-height: auto;
+        padding: 0 5%;
+        display: flex;
+    }
+
+    article {
+        text-align: justify;
+        margin: 0 3%;
+        margin-bottom: 5%;
+    }
+
+    footer {
+        min-height: auto;
+        padding: 0%;
+        background-color: var(--azulescuro);
+        color: white;
+
+        padding: 0 5%;
+        display: flex;
+    }
+
+    footer h2 {
+        margin: 3% 0;
+    }
+    
+    footer section {
+        width: 100%;
+        margin: 2% 3%;
+    }
+
+    #rights {
+        font-size: 0.8rem;
+        text-align: center;
+        color: var(--cinza);
+        background-color: var(--azulescuro);
+        padding: 1%;
+    }
+}
