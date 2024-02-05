@@ -16,6 +16,8 @@
         font-weight: bold;
         }
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 :root {
     /* light */
     --azulescuro: #0F2544;
@@ -36,7 +38,8 @@
 }
 
 body {
-    font-family: "Glacial", sans-serif;
+    /* font-family: "Glacial", sans-serif; */
+    font-family: 'Roboto', sans-serif;
 }
 
 header {
@@ -50,11 +53,15 @@ header {
     background-color: var(--azulescuro);
 }
 
-#header-logo {
-    width: 15%;
-    height: auto;
+header a {
+    width: 45px;
+    height: 45px;
     margin-right: 5%;
-    float: right;
+}
+
+#header-logo {
+    width: 100%;
+    height: auto;
 }
 
 .material-symbols-outlined {
@@ -82,7 +89,7 @@ nav {
     flex-direction: column;
     position: fixed;
     padding: 5%;
-    margin-top: 15%;
+    margin-top: 10vh;
     background-color: var(--azulescuro);
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.300);
     opacity: 0;
@@ -107,15 +114,15 @@ nav a:hover {
 
 #whatsapp-button {
     position: fixed;
-    bottom: 10px;
-    right: 10px;
+    bottom: 20px;
+    right: 20px;
     display: block;
     width: 60px;
     height: 60px;
     background-color: var(--azulalt);
     border-radius: 50%;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
 #whatsapp-icon {
@@ -190,22 +197,28 @@ address p {
 
 #articles-section {
     min-height: 100vh;
-    padding: 10% 5%;
+    margin: 10% 5%;
 }
 
 .main-articles {
-    text-align: justify;
+    width: 100%;
     margin: 20% 0;
 }
 
 .main-articles h1 {
     color: var(--azulescuro);
-    font-size: 2em;
+    font-size: 2rem;
     margin: 5% 0;
 }
 
 .main-articles p {
     margin: 2% 0;
+    text-align: justify;
+    line-height: 1.5rem;
+}
+
+.main-articles a {
+    
 }
 
 .article-image {
@@ -226,17 +239,18 @@ address p {
 
 #form-section {
     width: 100%;
-    height: 100vh;
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding-top: 10vh;
+    padding-top: 13vh;
+    margin-bottom: 5%;
 }
 
-#contact {
-    font-size: 1.7rem;
-    margin: 5% 0;
+#form-section h1 {
+    font-size: 1.8rem;
     color: var(--azulescuro);
+    text-align: center;
+    margin: 0 0 3% 0;
 }
 
 #form {
@@ -284,12 +298,87 @@ label {
     background-color: var(--azulalt);
 }
 
-@media screen and (min-width: 1000px) {
-    #header-logo {
-        width: 15%;
-        height: auto;
-        margin-right: 12%;
-        float: right;
+#form-button:hover {
+    cursor: pointer;
+}
+
+/* nossa-equipe page */
+
+#nossa-equipe-section {
+    padding-top: 13vh;
+    margin: 0 5% 5% 5%;
+}
+
+#nossa-equipe-section h1 {
+    font-size: 1.8rem;
+    text-align: center;
+    color: var(--azulescuro);
+    margin: 0 0 3% 0;
+}
+
+.profiles h2 {
+    color: var(--azulescuro);
+    margin: 5% 0 0 0;
+}
+
+.profiles h3 {
+    color: var(--azulalt);
+}
+
+.profiles h3, .profiles p {
+    margin: 2% 0;
+    text-align: justify;
+}
+
+.profiles p {
+    line-height: 1.5rem;
+}
+
+.profiles img {
+    width: 100%;
+    margin: 5% 0;
+}
+
+/* sobre-nos page */
+
+#hm-color {
+    color: var(--azulalt);
+}
+
+#sobre-nos-section {
+    padding-top: 13vh;
+    margin: 0 5% 5% 5%;
+}
+
+#sobre-nos-section h1 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--azulescuro);
+    margin: 0 0 3% 0;
+}
+
+#sobre {
+    text-align: justify;
+    line-height: 1.5rem;
+    margin: 5% 0;
+}
+
+#sobre p {
+    margin: 2% 0;
+}
+
+#sobre ul {
+    margin: 2% 0 0 5%;
+}
+
+#sobre h2 {
+    color: var(--azulescuro);
+    margin: 5% 0 0 0;
+}
+
+@media screen and (min-width: 1280px) {
+    header a {
+        margin-right: 3%;
     }
 
     nav {
@@ -323,12 +412,11 @@ label {
 
     #articles-section {
         min-height: auto;
-        padding: 0 5%;
+        margin: 0 5%;
         display: flex;
     }
 
     .main-articles {
-        text-align: justify;
         margin: 0 3%;
         margin-bottom: 5%;
     }
@@ -336,8 +424,6 @@ label {
     footer {
         min-height: auto;
         padding: 0%;
-        background-color: var(--azulescuro);
-        color: white;
 
         padding: 0 5%;
         display: flex;
@@ -362,15 +448,27 @@ label {
 
     /* form page styles */
 
-    #form-section {
-        padding-top: 5vh;
-    }
-
-    #contact {
-        margin: 5% 0 2% 0;
-    }
-
     #form {
         width: 35%;
+    }
+
+    #form-section h1 {
+        margin: 0;
+    }
+
+    /* nossa-equipe page */
+
+    #nossa-equipe-section {
+        margin: 0 20% 5% 20%;
+    }
+
+    /* sobre-nos page */
+
+    #sobre-nos-section {
+        margin: 0 20% 5% 20%;
+    }
+    
+    #sobre ul {
+        margin: 2% 0 0 2%;
     }
 }
